@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DropZone · Image Uploader</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="aurora"><i></i><i></i><i></i></div>
+
+<main class="card">
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+      </div>
+      <div>
+        <h1>Drop<span>Zone</span></h1>
+        <p class="sub">Drag, drop &amp; upload your images ✨</p>
+      </div>
+    </div>
+    <div class="head-actions">
+      <span class="pill" id="fbStatus">Firebase…</span>
+      <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <div class="drop-area" id="dropArea" tabindex="0" role="button" aria-label="Upload images">
+    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/gif" multiple hidden>
+    <div class="drop-icon">
+      <svg viewBox="0 0 64 64" fill="none" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#f472b6"/></linearGradient></defs>
+        <path d="M18 44a11 11 0 0 1-1.5-21.9A15 15 0 0 1 45.6 20 12 12 0 0 1 46 44"/><path d="M32 54V32m0 0-8 8m8-8 8 8"/>
+      </svg>
+    </div>
+    <h3>Drag &amp; drop images here</h3>
+    <p>ya <span>files browse karein</span> · ya <kbd>Ctrl</kbd> + <kbd>V</kbd> se paste karein</p>
+    <div class="chips"><i>🖼 JPG</i><i>🖼 PNG</i><i>🎞 GIF</i><i>⚖ Max 2 MB</i></div>
+  </div>
+
+  <div class="error" id="error" role="alert"></div>
+  <div class="queue" id="queue"></div>
+
+  <section>
+    <div class="g-head">
+      <h2>Saved images <small id="count">0</small></h2>
+      <button class="link-btn" id="clearBtn">🗑 Clear all</button>
+    </div>
+    <div class="meter" title="localStorage usage"><div id="meterBar"></div></div>
+    <p class="meter-txt" id="meterTxt"></p>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <footer>Built with HTML · CSS · JS · Firebase</footer>
+</main>
+
+<div class="lightbox" id="lightbox"><img id="lbImg" alt=""><p id="lbCap"></p></div>
+<div class="toasts" id="toasts"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
